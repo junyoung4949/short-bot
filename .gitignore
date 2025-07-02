@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# 환경설정 및 민감 정보
+config.py
+.env
+*.env
+implement/
+
+# macOS
+.DS_Store
+
+# 임시 파일
+*.tmp
+*.temp
+*.log
+*.bak
+
+# Jupyter Notebook 체크포인트
+.ipynb_checkpoints/
+
+# VSCode
+.vscode/
+
+# 기타
+*.sqlite3
+*.db
+*.sqlite
+
+# Moviepy, 영상, 이미지 등 대용량 파일
+*.mp4
+*.avi
+*.mov
+*.png
+*.jpg
+*.jpeg
+*.gif
+
+# Supabase, 기타 클라우드 임시 파일
+.supabase/
+
+# Cursor, PyCharm, JetBrains 등 IDE
+.idea/
+*.iml
+
+# 시스템 파일
+Thumbs.db
+ehthumbs.db
+Icon? 
