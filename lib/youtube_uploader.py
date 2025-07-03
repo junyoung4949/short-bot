@@ -7,7 +7,7 @@ import os
 
 class YouTubeUploader:
     def __init__(self, project_id, user_id):
-        self.s3_repo = TokenManager(project_id, user_id)
+        self.token_manager = TokenManager(project_id, user_id)
         self.SCOPES = ['https://www.googleapis.com/auth/youtube.upload']
         self.API_SERVICE_NAME = 'youtube'
         self.API_VERSION = 'v3'
@@ -15,7 +15,7 @@ class YouTubeUploader:
 
     def authenticate(self):
         """S3에서 토큰을 가져와 인증합니다."""
-        self.credentials = self.s3_repo.get_token_from_s3()
+        self.credentials = self.token_manager.get_token_from_s3()
         if not self.credentials:
             print("토큰을 가져오지 못했습니다. 인증 실패.")
             return False
@@ -23,7 +23,7 @@ class YouTubeUploader:
             try:
                 request = Request()
                 self.credentials.refresh(request)
-                self.s3_repo.save_token_to_s3(self.credentials)
+                self.token_manager.save_token_to_s3(self.credentials)
             except Exception as e:
                 print(f"토큰 갱신 실패: {str(e)}")
                 return False

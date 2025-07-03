@@ -9,7 +9,7 @@ __pycache__/
 config.py
 .env
 *.env
-implement/
+local/
 
 # macOS
 .DS_Store

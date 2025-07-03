@@ -19,7 +19,7 @@ class ItemRepository:
         return res
 
     def read_item_random(self):
-        res = self.supabase.table(self.table_name).select("*").eq("project_id", self.project_id).limit(1).execute()
+        res = self.supabase.table(self.table_name).select("*").eq("project_id", self.project_id).eq("status", "APPROVED").limit(1).execute()
         if res.data and len(res.data) > 0:
             return res.data[0]
         return None
@@ -30,3 +30,7 @@ class ItemRepository:
 
     def delete_item(self, item_id):
         self.supabase.table(self.table_name).delete().eq("id", item_id).execute()
+
+    def update_status_uploaded(self, item_id):
+        res = self.supabase.table(self.table_name).update({"status": "UPLOADED"}).eq("id", item_id).execute()
+        return res
