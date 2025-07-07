@@ -4,4 +4,9 @@ google-auth
 boto3
 botocore
 supabase
-moviepy 
+moviepy==1.0.3
+numpy==1.26.4
+openai
+requests
+fal_client
+Pillow 

@@ -2,9 +2,10 @@ from abc import ABC, abstractmethod
 import moviepy.editor as mpy
 
 class VideoTemplate(ABC):
-    def __init__(self):
+    def __init__(self, music_repository, wallpaper_repository):
         self.moviepy = mpy
-        pass
+        self.music_repository = music_repository
+        self.wallpaper_repository = wallpaper_repository
 
     def run(self, json):
         self.render(json)

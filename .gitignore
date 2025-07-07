@@ -51,3 +51,9 @@ local/
 Thumbs.db
 ehthumbs.db
 Icon? 
+
+# 테스트 스크립트
+test_*.py
+
+# 폰트 파일
+fonts/*
